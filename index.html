@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Landing Template</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Irreverente</h1>
+      <nav class="nav">
+        <a href="#productos">Productos</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#pedido">Pedir</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Libros personalizados y camisetas estampadas</h2>
+          <p>Productos únicos, hechos a medida. Diseños propios, impresión de alta calidad y atención personalizada para tus pedidos.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#productos">Ver productos</a>
+            <a class="btn outline" href="#pedido">Pedir ahora</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <!-- pequeño mockup svg -->
+          <svg width="280" height="180" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <rect x="8" y="10" width="120" height="160" rx="6" fill="#fff" stroke="#e6eefc" />
+            <rect x="152" y="20" width="120" height="120" rx="8" fill="#fff" stroke="#fdeef2" />
+            <rect x="24" y="28" width="88" height="18" rx="3" fill="#f1f6ff" />
+            <rect x="168" y="36" width="84" height="84" rx="6" fill="#fff0f3" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="productos">
+      <div class="container">
+        <h3>Nuestros productos</h3>
+        <div class="grid products-grid">
+          <article class="card">
+            <div class="card-media" aria-hidden>
+              <!-- libro icon -->
+              <svg viewBox="0 0 24 24"><path d="M3 5v14a1 1 0 0 0 1 1h12" fill="#f1f6ff" stroke="#2b6df6"/></svg>
+            </div>
+            <div class="card-body">
+              <h4>Libros personalizados</h4>
+              <p>Crea historias con el nombre y la foto del destinatario. Encuadernación en tapa blanda o dura.</p>
+              <p class="price">Desde $15 USD</p>
+              <a class="btn small" href="#pedido" data-product="libro">Pedir libro</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media" aria-hidden>
+              <!-- camiseta icon -->
+              <svg viewBox="0 0 24 24"><path d="M4 7s1-2 4-2 4 2 4 2 2-2 4-2 4 2 4 2v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" fill="#fff8f0" stroke="#ff6b6b"/></svg>
+            </div>
+            <div class="card-body">
+              <h4>Camisetas estampadas</h4>
+              <p>Impresión en algodón de alta calidad. Variedad de tallas y colores. Personaliza con tu diseño o el nuestro.</p>
+              <p class="price">Desde $12 USD</p>
+              <a class="btn small" href="#pedido" data-product="camiseta">Pedir camiseta</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="como-funciona">
+      <div class="container">
+        <h3>Cómo funciona</h3>
+        <ol class="steps">
+          <li>
+            <strong>1.</strong> Elige el producto y personaliza (texto, imágenes, tallas).
+          </li>
+          <li>
+            <strong>2.</strong> Envíanos tu diseño o te ayudamos a crearlo.
+          </li>
+          <li>
+            <strong>3.</strong> Producción y envío. Recibes un producto único y listo para regalar.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="order" id="pedido">
+      <div class="container">
+        <h3>Realiza tu pedido</h3>
+        <p class="muted">Completa el formulario y te contactamos con el presupuesto y tiempos.</p>
+        <form id="orderForm" action="https://formspree.io/f/xanplpaq" method="POST" enctype="multipart/form-data">
+          <div class="form-grid">
+            <label>Producto
+              <select name="producto" id="producto" required>
+                <option value="libro">Libro personalizado</option>
+                <option value="camiseta">Camiseta estampada</option>
+              </select>
+            </label>
+
+            <label id="sizeLabel">Talla (camiseta)
+              <select name="talla" id="talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+            </label>
+
+            <label>Cantidad
+              <input type="number" name="cantidad" min="1" value="1" required>
+            </label>
+
+            <label>Texto o instrucciones (opcional)
+              <textarea name="detalles" rows="3" placeholder="Ej: Nombre del destinatario, dedicatoria, color preferido"></textarea>
+            </label>
+
+            <label>Subir archivo (logo o imagen, opcional)
+              <input type="file" name="archivo" accept="image/*,.pdf">
+            </label>
+
+            <label>Nombre completo
+              <input type="text" name="nombre" required>
+            </label>
+
+            <label>Email
+              <input type="email" name="email" required>
+            </label>
+
+            <label>Teléfono
+              <input type="tel" name="telefono">
+            </label>
+
+            <label>Dirección de envío
+              <input type="text" name="direccion">
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Enviar pedido</button>
+            <button type="reset" class="btn outline">Limpiar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <h3>Contacto</h3>
+        <p class="muted">¿Dudas? Escríbenos y te responderemos pronto.</p>
+        <form id="leadForm" action="https://formspree.io/f/xanplpaq" method="POST">
+          <label>Nombre<input type="text" name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Mensaje<textarea name="message" rows="4"></textarea></label>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> F — Landing Pages</small>
+    </div>
+  </footer>
+
+<script>
+const form = document.getElementById('leadForm');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (response.ok) {
+    form.innerHTML = "<p><b>¡Gracias!</b> Tu mensaje ha sido enviado con éxito.</p>";
+  } else {
+    form.innerHTML = "<p>Hubo un error al enviar el mensaje. Intenta de nuevo.</p>";
+  }
+});
+</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
