@@ -4,17 +4,43 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Landing Template</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Remix Icon: amplia colección de iconos (alternativa a Bootstrap Icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
+  <div class="topbar" role="region" aria-label="Información superior">
+    <div class="container topbar-inner">
+      <div class="topbar-item">
+        <i class="bi bi-truck" aria-hidden></i>
+        <span>Envíos a toda Colombia</span>
+      </div>
+      <div class="topbar-item center">
+        <i class="bi bi-shield-check" aria-hidden></i>
+        <span>Entrega garantizada</span>
+      </div>
+      <div class="topbar-item right">
+        <!-- reseñas button -->
+        <button class="btn btn-dark small" data-bs-toggle="modal" data-bs-target="#reviewsModal">
+          <i class="bi bi-chat-right-text-fill" aria-hidden></i>
+          <span>Visita nuestras reseñas</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container">
       <h1 class="logo">Irreverente</h1>
       <nav class="nav">
         <a href="#productos">Productos</a>
-        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#galeria">Galeria</a>
         <a href="#pedido">Pedir</a>
         <a href="#contacto">Contacto</a>
+        <a href="#carrito" id="carrito" class="cart-link" aria-label="Ir al carrito"><i class="bi bi-cart3" aria-hidden></i></a>
       </nav>
     </div>
   </header>
@@ -23,144 +49,133 @@
     <section class="hero" id="inicio">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h2>Libros personalizados y camisetas estampadas</h2>
+          <h2>Lleva libros peronalizados y estampa tu ropa</h2>
           <p>Productos únicos, hechos a medida. Diseños propios, impresión de alta calidad y atención personalizada para tus pedidos.</p>
           <div class="hero-ctas">
             <a class="btn primary" href="#productos">Ver productos</a>
             <a class="btn outline" href="#pedido">Pedir ahora</a>
           </div>
         </div>
-        <div class="hero-art">
-          <!-- pequeño mockup svg -->
-          <svg width="280" height="180" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <rect x="8" y="10" width="120" height="160" rx="6" fill="#fff" stroke="#e6eefc" />
-            <rect x="152" y="20" width="120" height="120" rx="8" fill="#fff" stroke="#fdeef2" />
-            <rect x="24" y="28" width="88" height="18" rx="3" fill="#f1f6ff" />
-            <rect x="168" y="36" width="84" height="84" rx="6" fill="#fff0f3" />
-          </svg>
-        </div>
+       <div>
+        <div class="hero-media" aria-hidden>
+          <!-- hero image -->
+          <img src="./images/hero-image.png" alt="Ejemplos de productos: libro personalizado y camiseta estampada" />
+       </div>
       </div>
     </section>
 
-    <section class="products" id="productos">
+    <section class="products bg-secondary-subtle" id="productos">
       <div class="container">
         <h3>Nuestros productos</h3>
         <div class="grid products-grid">
           <article class="card">
             <div class="card-media" aria-hidden>
-              <!-- libro icon -->
-              <svg viewBox="0 0 24 24"><path d="M3 5v14a1 1 0 0 0 1 1h12" fill="#f1f6ff" stroke="#2b6df6"/></svg>
+              <i class="bi bi-journal-richtext" style="font-size:28px;color:var(--brand-black);"></i>
             </div>
             <div class="card-body">
               <h4>Libros personalizados</h4>
               <p>Crea historias con el nombre y la foto del destinatario. Encuadernación en tapa blanda o dura.</p>
-              <p class="price">Desde $15 USD</p>
-              <a class="btn small" href="#pedido" data-product="libro">Pedir libro</a>
+              <p class="price">Desde $49.900</p>
+              <a class="btn small" href="#pedido" data-product="libro">Pedir libros</a>
             </div>
           </article>
 
           <article class="card">
             <div class="card-media" aria-hidden>
-              <!-- camiseta icon -->
-              <svg viewBox="0 0 24 24"><path d="M4 7s1-2 4-2 4 2 4 2 2-2 4-2 4 2 4 2v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" fill="#fff8f0" stroke="#ff6b6b"/></svg>
+              <i class="ri-t-shirt-air-line" style="font-size:28px;color:var(--brand-black);"></i>
             </div>
             <div class="card-body">
               <h4>Camisetas estampadas</h4>
               <p>Impresión en algodón de alta calidad. Variedad de tallas y colores. Personaliza con tu diseño o el nuestro.</p>
-              <p class="price">Desde $12 USD</p>
-              <a class="btn small" href="#pedido" data-product="camiseta">Pedir camiseta</a>
+              <p class="price">Desde $59.900</p>
+              <a class="btn small" href="#pedido" data-product="camiseta">Pedir camisetas</a>
+            </div>
+          </article>
+          
+          <article class="card">
+            <div class="card-media" aria-hidden>
+              <i class="ri-cup-line" style="font-size:28px;color:var(--brand-black);"></i>
+            </div> 
+            <div class="card-body">
+              <h4>Mugs (tazas)</h4>
+              <p>Tazas cerámicas de 330ml con estampado de alta definición. Aptas para microondas.</p>
+              <p class="price">Desde $15.900</p>
+              <a class="btn small" href="#pedido" data-product="mug">Pedir mug</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media" aria-hidden>
+              <i class="ri-shopping-basket-line" style="font-size:28px;color:var(--brand-black);"></i>
+            </div> 
+            <div class="card-body">
+              <h4>Anchetas</h4>
+              <p></p>Reagala una ancheta a esa persona especial, sabemos cómo hacer que se sienta querida.
+              <p class="price">Desde $55.900</p>
+              <a class="btn small" href="#pedido" data-product="mug">Pedir ancheta</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="how" id="como-funciona">
-      <div class="container">
-        <h3>Cómo funciona</h3>
-        <ol class="steps">
-          <li>
-            <strong>1.</strong> Elige el producto y personaliza (texto, imágenes, tallas).
-          </li>
-          <li>
-            <strong>2.</strong> Envíanos tu diseño o te ayudamos a crearlo.
-          </li>
-          <li>
-            <strong>3.</strong> Producción y envío. Recibes un producto único y listo para regalar.
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="order" id="pedido">
-      <div class="container">
-        <h3>Realiza tu pedido</h3>
-        <p class="muted">Completa el formulario y te contactamos con el presupuesto y tiempos.</p>
-        <form id="orderForm" action="https://formspree.io/f/xanplpaq" method="POST" enctype="multipart/form-data">
-          <div class="form-grid">
-            <label>Producto
-              <select name="producto" id="producto" required>
-                <option value="libro">Libro personalizado</option>
-                <option value="camiseta">Camiseta estampada</option>
-              </select>
-            </label>
-
-            <label id="sizeLabel">Talla (camiseta)
-              <select name="talla" id="talla">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-            </label>
-
-            <label>Cantidad
-              <input type="number" name="cantidad" min="1" value="1" required>
-            </label>
-
-            <label>Texto o instrucciones (opcional)
-              <textarea name="detalles" rows="3" placeholder="Ej: Nombre del destinatario, dedicatoria, color preferido"></textarea>
-            </label>
-
-            <label>Subir archivo (logo o imagen, opcional)
-              <input type="file" name="archivo" accept="image/*,.pdf">
-            </label>
-
-            <label>Nombre completo
-              <input type="text" name="nombre" required>
-            </label>
-
-            <label>Email
-              <input type="email" name="email" required>
-            </label>
-
-            <label>Teléfono
-              <input type="tel" name="telefono">
-            </label>
-
-            <label>Dirección de envío
-              <input type="text" name="direccion">
-            </label>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Enviar pedido</button>
-            <button type="reset" class="btn outline">Limpiar</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
     <section class="contact" id="contacto">
       <div class="container">
-        <h3>Contacto</h3>
-        <p class="muted">¿Dudas? Escríbenos y te responderemos pronto.</p>
-        <form id="leadForm" action="https://formspree.io/f/xanplpaq" method="POST">
-          <label>Nombre<input type="text" name="name" required></label>
-          <label>Email<input type="email" name="email" required></label>
-          <label>Mensaje<textarea name="message" rows="4"></textarea></label>
-          <button type="submit">Enviar</button>
-        </form>
+        <div class="contact-card">
+          <div class="row g-4">
+            <div class="col-lg-5 contact-info">
+              <div class="brand-badge">Irreverente</div>
+              <h3>¿Tienes una idea? Nosotros la hacemos realidad</h3>
+              <p class="muted">Escríbenos y te asesoramos con el diseño y la producción. Respuesta en menos de 24 horas.</p>
+
+              <ul class="contact-list">
+                <li><i class="bi bi-telephone"></i> <a href="tel:+573001234567">+57 300 1234567</a></li>
+                <li><i class="bi bi-envelope"></i> <a href="mailto:hola@irreverente.com">hola@irreverente.com</a></li>
+                <li><i class="bi bi-geo-alt"></i> Envios a toda Colombia</li>
+              </ul>
+
+              <div class="socials">
+                <a class="btn btn-outline-dark btn-sm me-2" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a class="btn btn-outline-dark btn-sm me-2" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a class="btn btn-outline-dark btn-sm" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              </div>
+              <div>
+                <br>
+                <p>También puedes escribirnos directamente a WhatsApp para respuesta inmediata</p>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <form id="leadForm" action="https://formspree.io/f/xanplpaq" method="POST" class="contact-form p-4 rounded-3 shadow-sm bg-white">
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input class="form-control" type="text" name="name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input class="form-control" type="email" name="email" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Asunto</label>
+                    <input class="form-control" type="text" name="asunto" placeholder="Ej: Pedido personalizado, consulta de diseño">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" name="message" rows="5" placeholder="Cuéntanos tu idea con detalles"></textarea>
+                  </div>
+                  <div class="col-12 d-flex align-items-center justify-content-between">
+                    <div class="small text-muted">También puedes adjuntar un archivo (logo o imagen)</div>
+                    <div>
+                      <input type="file" name="archivo" accept="image/*,.pdf" class="form-control-file me-2 d-inline-block" style="width:auto">
+                      <button type="submit" class="btn primary">Enviar mensaje</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -170,26 +185,32 @@
       <small>© <span id="year"></span> F — Landing Pages</small>
     </div>
   </footer>
+  <!-- Reviews modal (Bootstrap) -->
+  <div class="modal fade" id="reviewsModal" tabindex="-1" aria-labelledby="reviewsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reviewsTitle">Reseñas de clientes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="review mb-3">
+            <strong>María P.</strong>
+            <p class="muted mb-0">"El libro personalizado fue un éxito. Muy buena calidad y entrega rápida."</p>
+          </div>
+          <div class="review mb-3">
+            <strong>Carlos R.</strong>
+            <p class="muted mb-0">"La camiseta quedó perfecta. Las tallas vienen correctas."</p>
+          </div>
+          <div class="review">
+            <strong>Lucía G.</strong>
+            <p class="muted mb-0">"Excelente atención y producto tal como lo pedí."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script>
-const form = document.getElementById('leadForm');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const data = new FormData(form);
-  const response = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  });
-  if (response.ok) {
-    form.innerHTML = "<p><b>¡Gracias!</b> Tu mensaje ha sido enviado con éxito.</p>";
-  } else {
-    form.innerHTML = "<p>Hubo un error al enviar el mensaje. Intenta de nuevo.</p>";
-  }
-});
-</script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
